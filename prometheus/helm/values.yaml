@@ -448,11 +448,11 @@ nodeExporter:
   ## Node tolerations for node-exporter scheduling to nodes with taints
   ## Ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
   ##
-  tolerations: [] 
-  #- key: "apps"
-  #  operator: "Equal"
-  #  value: "true"
-  #  effect: "NoSchedule"
+  tolerations:  
+  - key: "apps"
+    operator: "Equal"
+    value: "true"
+    effect: "NoSchedule"
 
   ## Node labels for node-exporter pod assignment
   ## Ref: https://kubernetes.io/docs/user-guide/node-selection/
@@ -672,7 +672,7 @@ server:
     ## If true, Prometheus server will create/use a Persistent Volume Claim
     ## If false, use emptyDir
     ##
-    enabled: false
+    enabled: true
 
     ## Prometheus server data Persistent Volume access modes
     ## Must match those of existing PV or dynamic provisioner
